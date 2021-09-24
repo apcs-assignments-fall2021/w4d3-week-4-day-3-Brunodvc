@@ -7,7 +7,12 @@ public class MyMain {
     //     4
     //     2
     public static void printEvensBackwards(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        for (int i = arr.length -1; i>=0; i--){
+            if (arr[i] % 2 == 0) {
+                System.out.println(arr[i]);
+            }
+        }
+
         return;
     }
 
@@ -18,7 +23,13 @@ public class MyMain {
     //     isIncreasing([1, 1, 3, 6, 7]) => false (because 1 is not > 1)
     //     isIncreasing([1, 2, 3, 2, 4, 5, 8]) => false
     public static boolean isIncreasing(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        int count = 0;
+        for (int i = 0; i< arr.length-1; i++){
+            if (arr[i] < arr[i+1]){
+                count ++;
+            }
+        if (count == arr.length-1)  {return true;}
+        }
         return false;
     }
 
@@ -39,7 +50,14 @@ public class MyMain {
     // Ex: containsDuplicates([1, 2, 3, 2, 1]) => true
     //     containsDuplicates([7, 2, 3, 4, 1, 5]) => false
     public static boolean containsDuplicates(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        for (int i = 0; i< arr.length; i++){
+            for (int x = 1; x< arr.length; x++){
+                if (arr[i] == arr[x] && i!= x){
+                    return true;
+                }
+            }
+
+        }
         return false;
     }
 
@@ -48,7 +66,14 @@ public class MyMain {
     // to sort our code
     // This algorithm returns the sorted array
     public static int[] bubbleSort(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        for(int x= 0; x< arr.length; x++) {
+            for (int i = 0; i < arr.length - 1; i++)
+                if (arr[i] > arr[i + 1]) {
+                    int temp = arr[i + 1];
+                    arr[i + 1] = arr[i];
+                    arr[i] = temp;
+                }
+        }
         return arr;
     }
 
